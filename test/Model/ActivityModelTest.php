@@ -152,6 +152,14 @@ class ActivityModelTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "driver_full_name"
+     */
+    public function testPropertyDriverFullName()
+    {
+
+    }
+
+    /**
      * Test attribute "route_status"
      */
     public function testPropertyRouteStatus()

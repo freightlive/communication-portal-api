@@ -73,6 +73,7 @@ class ActivityModel implements ArrayAccess
         'duration' => 'int',
         'date_time_from' => '\DateTime',
         'date_time_to' => '\DateTime',
+        'driver_full_name' => 'string',
         'route_status' => 'string',
         'route_latest_position' => '\BumbalCommunicationPortal\Model\GeoPositionModel',
         'address' => '\BumbalCommunicationPortal\Model\AddressModel',
@@ -96,6 +97,7 @@ class ActivityModel implements ArrayAccess
         'duration' => 'duration',
         'date_time_from' => 'date_time_from',
         'date_time_to' => 'date_time_to',
+        'driver_full_name' => 'driver_full_name',
         'route_status' => 'route_status',
         'route_latest_position' => 'route_latest_position',
         'address' => 'address',
@@ -115,6 +117,7 @@ class ActivityModel implements ArrayAccess
         'duration' => 'setDuration',
         'date_time_from' => 'setDateTimeFrom',
         'date_time_to' => 'setDateTimeTo',
+        'driver_full_name' => 'setDriverFullName',
         'route_status' => 'setRouteStatus',
         'route_latest_position' => 'setRouteLatestPosition',
         'address' => 'setAddress',
@@ -134,6 +137,7 @@ class ActivityModel implements ArrayAccess
         'duration' => 'getDuration',
         'date_time_from' => 'getDateTimeFrom',
         'date_time_to' => 'getDateTimeTo',
+        'driver_full_name' => 'getDriverFullName',
         'route_status' => 'getRouteStatus',
         'route_latest_position' => 'getRouteLatestPosition',
         'address' => 'getAddress',
@@ -178,6 +182,7 @@ class ActivityModel implements ArrayAccess
         $this->container['duration'] = isset($data['duration']) ? $data['duration'] : null;
         $this->container['date_time_from'] = isset($data['date_time_from']) ? $data['date_time_from'] : null;
         $this->container['date_time_to'] = isset($data['date_time_to']) ? $data['date_time_to'] : null;
+        $this->container['driver_full_name'] = isset($data['driver_full_name']) ? $data['driver_full_name'] : null;
         $this->container['route_status'] = isset($data['route_status']) ? $data['route_status'] : null;
         $this->container['route_latest_position'] = isset($data['route_latest_position']) ? $data['route_latest_position'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
@@ -350,6 +355,27 @@ class ActivityModel implements ArrayAccess
     public function setDateTimeTo($date_time_to)
     {
         $this->container['date_time_to'] = $date_time_to;
+
+        return $this;
+    }
+
+    /**
+     * Gets driver_full_name
+     * @return string
+     */
+    public function getDriverFullName()
+    {
+        return $this->container['driver_full_name'];
+    }
+
+    /**
+     * Sets driver_full_name
+     * @param string $driver_full_name Name of the driver assigned to this route
+     * @return $this
+     */
+    public function setDriverFullName($driver_full_name)
+    {
+        $this->container['driver_full_name'] = $driver_full_name;
 
         return $this;
     }
