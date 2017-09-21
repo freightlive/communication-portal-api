@@ -12,9 +12,9 @@ Name | Type | Description | Notes
 **date_time_to** | [**\DateTime**](\DateTime.md) | Planned stop time of this activity | [optional] 
 **driver_full_name** | **string** | Name of the driver assigned to this route | [optional] 
 **route_status** | **string** | Status of the Route this Activity is planned on | [optional] 
-**route_latest_position** | [**\BumbalCommunicationPortal\Model\GeoPositionModel**](GeoPositionModel.md) |  | [optional] 
-**address** | [**\BumbalCommunicationPortal\Model\AddressModel**](AddressModel.md) |  | [optional] 
-**package_lines** | [**\BumbalCommunicationPortal\Model\PackageLineModel[]**](PackageLineModel.md) |  | [optional] 
+**route_latest_position** | [**\BumbalCommunicationPortal\BumbalCommunicationPortal\Model\GeoPositionModel**](GeoPositionModel.md) |  | [optional] 
+**address** | [**\BumbalCommunicationPortal\BumbalCommunicationPortal\Model\AddressModel**](AddressModel.md) |  | [optional] 
+**package_lines** | [**\BumbalCommunicationPortal\BumbalCommunicationPortal\Model\PackageLineModel[]**](PackageLineModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

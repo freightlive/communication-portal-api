@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **activityRetrieve**
-> \BumbalCommunicationPortal\Model\ActivityModel activityRetrieve($token, $zipcode)
+> \BumbalCommunicationPortal\BumbalCommunicationPortal\Model\ActivityModel activityRetrieve($token, $zipcode)
 
 Retrieve Activity
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BumbalCommunicationPortal\Model\ActivityModel**](../Model/ActivityModel.md)
+[**\BumbalCommunicationPortal\BumbalCommunicationPortal\Model\ActivityModel**](../Model/ActivityModel.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **validateToken**
-> \BumbalCommunicationPortal\Model\PortalParameterModel[] validateToken($token)
+> \BumbalCommunicationPortal\BumbalCommunicationPortal\Model\PortalParameterModel[] validateToken($token)
 
 Validate Token
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BumbalCommunicationPortal\Model\PortalParameterModel[]**](../Model/PortalParameterModel.md)
+[**\BumbalCommunicationPortal\BumbalCommunicationPortal\Model\PortalParameterModel[]**](../Model/PortalParameterModel.md)
 
 ### Authorization
 
