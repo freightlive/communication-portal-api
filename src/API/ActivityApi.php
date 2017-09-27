@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace BumbalCommunicationPortal\BumbalCommunicationPortal\API;
+namespace BumbalCommunicationPortal\API;
 
 use \BumbalCommunicationPortal\ApiClient;
 use \BumbalCommunicationPortal\ApiException;
@@ -95,7 +95,7 @@ class ActivityApi
      * @param string $token Token of the Requested Activity (required)
      * @param string $zipcode ZipCode of the Requested Activity (required)
      * @throws \BumbalCommunicationPortal\ApiException on non-2xx response
-     * @return \BumbalCommunicationPortal\BumbalCommunicationPortal\Model\ActivityModel
+     * @return \BumbalCommunicationPortal\Model\ActivityModel
      */
     public function activityRetrieve($token, $zipcode)
     {
@@ -111,7 +111,7 @@ class ActivityApi
      * @param string $token Token of the Requested Activity (required)
      * @param string $zipcode ZipCode of the Requested Activity (required)
      * @throws \BumbalCommunicationPortal\ApiException on non-2xx response
-     * @return array of \BumbalCommunicationPortal\BumbalCommunicationPortal\Model\ActivityModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \BumbalCommunicationPortal\Model\ActivityModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function activityRetrieveWithHttpInfo($token, $zipcode)
     {
@@ -163,15 +163,15 @@ class ActivityApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\BumbalCommunicationPortal\BumbalCommunicationPortal\Model\ActivityModel',
+                '\BumbalCommunicationPortal\Model\ActivityModel',
                 '/activity/retrieve'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\BumbalCommunicationPortal\BumbalCommunicationPortal\Model\ActivityModel', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\BumbalCommunicationPortal\Model\ActivityModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\BumbalCommunicationPortal\BumbalCommunicationPortal\Model\ActivityModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\BumbalCommunicationPortal\Model\ActivityModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -187,7 +187,7 @@ class ActivityApi
      *
      * @param string $token Token of the Requested Activity (required)
      * @throws \BumbalCommunicationPortal\ApiException on non-2xx response
-     * @return \BumbalCommunicationPortal\BumbalCommunicationPortal\Model\PortalParameterModel[]
+     * @return \BumbalCommunicationPortal\Model\PortalParameterModel[]
      */
     public function validateToken($token)
     {
@@ -202,7 +202,7 @@ class ActivityApi
      *
      * @param string $token Token of the Requested Activity (required)
      * @throws \BumbalCommunicationPortal\ApiException on non-2xx response
-     * @return array of \BumbalCommunicationPortal\BumbalCommunicationPortal\Model\PortalParameterModel[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \BumbalCommunicationPortal\Model\PortalParameterModel[], HTTP status code, HTTP response headers (array of strings)
      */
     public function validateTokenWithHttpInfo($token)
     {
@@ -246,15 +246,15 @@ class ActivityApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\BumbalCommunicationPortal\BumbalCommunicationPortal\Model\PortalParameterModel[]',
+                '\BumbalCommunicationPortal\Model\PortalParameterModel[]',
                 '/activity/validate-token'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\BumbalCommunicationPortal\BumbalCommunicationPortal\Model\PortalParameterModel[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\BumbalCommunicationPortal\Model\PortalParameterModel[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\BumbalCommunicationPortal\BumbalCommunicationPortal\Model\PortalParameterModel[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\BumbalCommunicationPortal\Model\PortalParameterModel[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

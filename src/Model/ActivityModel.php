@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace BumbalCommunicationPortal\BumbalCommunicationPortal\Model;
+namespace BumbalCommunicationPortal\Model;
 
 use \ArrayAccess;
 
@@ -63,9 +63,9 @@ class ActivityModel implements ArrayAccess
         'date_time_to' => '\DateTime',
         'driver_full_name' => 'string',
         'route_status' => 'string',
-        'route_latest_position' => '\BumbalCommunicationPortal\BumbalCommunicationPortal\Model\GeoPositionModel',
-        'address' => '\BumbalCommunicationPortal\BumbalCommunicationPortal\Model\AddressModel',
-        'package_lines' => '\BumbalCommunicationPortal\BumbalCommunicationPortal\Model\PackageLineModel[]'
+        'route_latest_position' => '\BumbalCommunicationPortal\Model\GeoPositionModel',
+        'address' => '\BumbalCommunicationPortal\Model\AddressModel',
+        'package_lines' => '\BumbalCommunicationPortal\Model\PackageLineModel[]'
     ];
 
     /**
@@ -417,7 +417,7 @@ class ActivityModel implements ArrayAccess
 
     /**
      * Gets route_latest_position
-     * @return \BumbalCommunicationPortal\BumbalCommunicationPortal\Model\GeoPositionModel
+     * @return \BumbalCommunicationPortal\Model\GeoPositionModel
      */
     public function getRouteLatestPosition()
     {
@@ -426,7 +426,7 @@ class ActivityModel implements ArrayAccess
 
     /**
      * Sets route_latest_position
-     * @param \BumbalCommunicationPortal\BumbalCommunicationPortal\Model\GeoPositionModel $route_latest_position
+     * @param \BumbalCommunicationPortal\Model\GeoPositionModel $route_latest_position
      * @return $this
      */
     public function setRouteLatestPosition($route_latest_position)
@@ -438,7 +438,7 @@ class ActivityModel implements ArrayAccess
 
     /**
      * Gets address
-     * @return \BumbalCommunicationPortal\BumbalCommunicationPortal\Model\AddressModel
+     * @return \BumbalCommunicationPortal\Model\AddressModel
      */
     public function getAddress()
     {
@@ -447,7 +447,7 @@ class ActivityModel implements ArrayAccess
 
     /**
      * Sets address
-     * @param \BumbalCommunicationPortal\BumbalCommunicationPortal\Model\AddressModel $address
+     * @param \BumbalCommunicationPortal\Model\AddressModel $address
      * @return $this
      */
     public function setAddress($address)
@@ -459,7 +459,7 @@ class ActivityModel implements ArrayAccess
 
     /**
      * Gets package_lines
-     * @return \BumbalCommunicationPortal\BumbalCommunicationPortal\Model\PackageLineModel[]
+     * @return \BumbalCommunicationPortal\Model\PackageLineModel[]
      */
     public function getPackageLines()
     {
@@ -468,7 +468,7 @@ class ActivityModel implements ArrayAccess
 
     /**
      * Sets package_lines
-     * @param \BumbalCommunicationPortal\BumbalCommunicationPortal\Model\PackageLineModel[] $package_lines
+     * @param \BumbalCommunicationPortal\Model\PackageLineModel[] $package_lines
      * @return $this
      */
     public function setPackageLines($package_lines)
