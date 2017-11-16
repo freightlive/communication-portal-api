@@ -61,6 +61,8 @@ class ActivityModel implements ArrayAccess
         'duration' => 'int',
         'date_time_from' => '\DateTime',
         'date_time_to' => '\DateTime',
+        'eta_date_time' => '\DateTime',
+        'nr_of_activities' => 'int',
         'driver_full_name' => 'string',
         'route_status' => 'string',
         'route_latest_position' => '\BumbalCommunicationPortal\Model\GeoPositionModel',
@@ -80,6 +82,8 @@ class ActivityModel implements ArrayAccess
         'duration' => null,
         'date_time_from' => 'date-time',
         'date_time_to' => 'date-time',
+        'eta_date_time' => 'date-time',
+        'nr_of_activities' => null,
         'driver_full_name' => null,
         'route_status' => null,
         'route_latest_position' => null,
@@ -109,6 +113,8 @@ class ActivityModel implements ArrayAccess
         'duration' => 'duration',
         'date_time_from' => 'date_time_from',
         'date_time_to' => 'date_time_to',
+        'eta_date_time' => 'eta_date_time',
+        'nr_of_activities' => 'nr_of_activities',
         'driver_full_name' => 'driver_full_name',
         'route_status' => 'route_status',
         'route_latest_position' => 'route_latest_position',
@@ -129,6 +135,8 @@ class ActivityModel implements ArrayAccess
         'duration' => 'setDuration',
         'date_time_from' => 'setDateTimeFrom',
         'date_time_to' => 'setDateTimeTo',
+        'eta_date_time' => 'setEtaDateTime',
+        'nr_of_activities' => 'setNrOfActivities',
         'driver_full_name' => 'setDriverFullName',
         'route_status' => 'setRouteStatus',
         'route_latest_position' => 'setRouteLatestPosition',
@@ -149,6 +157,8 @@ class ActivityModel implements ArrayAccess
         'duration' => 'getDuration',
         'date_time_from' => 'getDateTimeFrom',
         'date_time_to' => 'getDateTimeTo',
+        'eta_date_time' => 'getEtaDateTime',
+        'nr_of_activities' => 'getNrOfActivities',
         'driver_full_name' => 'getDriverFullName',
         'route_status' => 'getRouteStatus',
         'route_latest_position' => 'getRouteLatestPosition',
@@ -194,6 +204,8 @@ class ActivityModel implements ArrayAccess
         $this->container['duration'] = isset($data['duration']) ? $data['duration'] : null;
         $this->container['date_time_from'] = isset($data['date_time_from']) ? $data['date_time_from'] : null;
         $this->container['date_time_to'] = isset($data['date_time_to']) ? $data['date_time_to'] : null;
+        $this->container['eta_date_time'] = isset($data['eta_date_time']) ? $data['eta_date_time'] : null;
+        $this->container['nr_of_activities'] = isset($data['nr_of_activities']) ? $data['nr_of_activities'] : null;
         $this->container['driver_full_name'] = isset($data['driver_full_name']) ? $data['driver_full_name'] : null;
         $this->container['route_status'] = isset($data['route_status']) ? $data['route_status'] : null;
         $this->container['route_latest_position'] = isset($data['route_latest_position']) ? $data['route_latest_position'] : null;
@@ -369,6 +381,48 @@ class ActivityModel implements ArrayAccess
     public function setDateTimeTo($date_time_to)
     {
         $this->container['date_time_to'] = $date_time_to;
+
+        return $this;
+    }
+
+    /**
+     * Gets eta_date_time
+     * @return \DateTime
+     */
+    public function getEtaDateTime()
+    {
+        return $this->container['eta_date_time'];
+    }
+
+    /**
+     * Sets eta_date_time
+     * @param \DateTime $eta_date_time ETA date time
+     * @return $this
+     */
+    public function setEtaDateTime($eta_date_time)
+    {
+        $this->container['eta_date_time'] = $eta_date_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets nr_of_activities
+     * @return int
+     */
+    public function getNrOfActivities()
+    {
+        return $this->container['nr_of_activities'];
+    }
+
+    /**
+     * Sets nr_of_activities
+     * @param int $nr_of_activities Number of activities preceding this one
+     * @return $this
+     */
+    public function setNrOfActivities($nr_of_activities)
+    {
+        $this->container['nr_of_activities'] = $nr_of_activities;
 
         return $this;
     }

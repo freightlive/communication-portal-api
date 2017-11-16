@@ -127,6 +127,20 @@ class ActivityModelTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "eta_date_time"
+     */
+    public function testPropertyEtaDateTime()
+    {
+    }
+
+    /**
+     * Test attribute "nr_of_activities"
+     */
+    public function testPropertyNrOfActivities()
+    {
+    }
+
+    /**
      * Test attribute "driver_full_name"
      */
     public function testPropertyDriverFullName()

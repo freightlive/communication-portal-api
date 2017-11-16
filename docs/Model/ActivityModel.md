@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **duration** | **int** | Max duration of the activity in minutes | [optional] 
 **date_time_from** | [**\DateTime**](\DateTime.md) | Planned start time of this activity | [optional] 
 **date_time_to** | [**\DateTime**](\DateTime.md) | Planned stop time of this activity | [optional] 
+**eta_date_time** | [**\DateTime**](\DateTime.md) | ETA date time | [optional] 
+**nr_of_activities** | **int** | Number of activities preceding this one | [optional] 
 **driver_full_name** | **string** | Name of the driver assigned to this route | [optional] 
 **route_status** | **string** | Status of the Route this Activity is planned on | [optional] 
 **route_latest_position** | [**\BumbalCommunicationPortal\Model\GeoPositionModel**](GeoPositionModel.md) |  | [optional] 
