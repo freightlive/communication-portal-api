@@ -174,4 +174,11 @@ class ActivityModelTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPackageLines()
     {
     }
+
+    /**
+     * Test attribute "brand"
+     */
+    public function testPropertyBrand()
+    {
+    }
 }

@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **route_latest_position** | [**\BumbalCommunicationPortal\Model\GeoPositionModel**](GeoPositionModel.md) |  | [optional] 
 **address** | [**\BumbalCommunicationPortal\Model\AddressModel**](AddressModel.md) |  | [optional] 
 **package_lines** | [**\BumbalCommunicationPortal\Model\PackageLineModel[]**](PackageLineModel.md) |  | [optional] 
+**brand** | [**\BumbalCommunicationPortal\Model\BrandModel**](BrandModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

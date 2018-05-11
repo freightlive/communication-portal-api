@@ -67,7 +67,8 @@ class ActivityModel implements ArrayAccess
         'route_status' => 'string',
         'route_latest_position' => '\BumbalCommunicationPortal\Model\GeoPositionModel',
         'address' => '\BumbalCommunicationPortal\Model\AddressModel',
-        'package_lines' => '\BumbalCommunicationPortal\Model\PackageLineModel[]'
+        'package_lines' => '\BumbalCommunicationPortal\Model\PackageLineModel[]',
+        'brand' => '\BumbalCommunicationPortal\Model\BrandModel'
     ];
 
     /**
@@ -88,7 +89,8 @@ class ActivityModel implements ArrayAccess
         'route_status' => null,
         'route_latest_position' => null,
         'address' => null,
-        'package_lines' => null
+        'package_lines' => null,
+        'brand' => null
     ];
 
     public static function swaggerTypes()
@@ -119,7 +121,8 @@ class ActivityModel implements ArrayAccess
         'route_status' => 'route_status',
         'route_latest_position' => 'route_latest_position',
         'address' => 'address',
-        'package_lines' => 'package_lines'
+        'package_lines' => 'package_lines',
+        'brand' => 'brand'
     ];
 
 
@@ -141,7 +144,8 @@ class ActivityModel implements ArrayAccess
         'route_status' => 'setRouteStatus',
         'route_latest_position' => 'setRouteLatestPosition',
         'address' => 'setAddress',
-        'package_lines' => 'setPackageLines'
+        'package_lines' => 'setPackageLines',
+        'brand' => 'setBrand'
     ];
 
 
@@ -163,7 +167,8 @@ class ActivityModel implements ArrayAccess
         'route_status' => 'getRouteStatus',
         'route_latest_position' => 'getRouteLatestPosition',
         'address' => 'getAddress',
-        'package_lines' => 'getPackageLines'
+        'package_lines' => 'getPackageLines',
+        'brand' => 'getBrand'
     ];
 
     public static function attributeMap()
@@ -211,6 +216,7 @@ class ActivityModel implements ArrayAccess
         $this->container['route_latest_position'] = isset($data['route_latest_position']) ? $data['route_latest_position'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['package_lines'] = isset($data['package_lines']) ? $data['package_lines'] : null;
+        $this->container['brand'] = isset($data['brand']) ? $data['brand'] : null;
     }
 
     /**
@@ -528,6 +534,27 @@ class ActivityModel implements ArrayAccess
     public function setPackageLines($package_lines)
     {
         $this->container['package_lines'] = $package_lines;
+
+        return $this;
+    }
+
+    /**
+     * Gets brand
+     * @return \BumbalCommunicationPortal\Model\BrandModel
+     */
+    public function getBrand()
+    {
+        return $this->container['brand'];
+    }
+
+    /**
+     * Sets brand
+     * @param \BumbalCommunicationPortal\Model\BrandModel $brand
+     * @return $this
+     */
+    public function setBrand($brand)
+    {
+        $this->container['brand'] = $brand;
 
         return $this;
     }
