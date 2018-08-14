@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**instance** | **string** | instance name | [optional] 
+**id** | **int** | ID of activity | [optional] 
 **nr** | **string** | Number of this Activity | [optional] 
 **activity_type_name** | **string** | Type of this Activity | [optional] 
 **status_name** | **string** | Status of this Activity | [optional] 

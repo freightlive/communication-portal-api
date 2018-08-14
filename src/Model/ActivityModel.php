@@ -54,6 +54,8 @@ class ActivityModel implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'instance' => 'string',
+        'id' => 'int',
         'nr' => 'string',
         'activity_type_name' => 'string',
         'status_name' => 'string',
@@ -76,6 +78,8 @@ class ActivityModel implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'instance' => null,
+        'id' => null,
         'nr' => null,
         'activity_type_name' => null,
         'status_name' => null,
@@ -108,6 +112,8 @@ class ActivityModel implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'instance' => 'instance',
+        'id' => 'id',
         'nr' => 'nr',
         'activity_type_name' => 'activity_type_name',
         'status_name' => 'status_name',
@@ -131,6 +137,8 @@ class ActivityModel implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'instance' => 'setInstance',
+        'id' => 'setId',
         'nr' => 'setNr',
         'activity_type_name' => 'setActivityTypeName',
         'status_name' => 'setStatusName',
@@ -154,6 +162,8 @@ class ActivityModel implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'instance' => 'getInstance',
+        'id' => 'getId',
         'nr' => 'getNr',
         'activity_type_name' => 'getActivityTypeName',
         'status_name' => 'getStatusName',
@@ -202,6 +212,8 @@ class ActivityModel implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['instance'] = isset($data['instance']) ? $data['instance'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['nr'] = isset($data['nr']) ? $data['nr'] : null;
         $this->container['activity_type_name'] = isset($data['activity_type_name']) ? $data['activity_type_name'] : null;
         $this->container['status_name'] = isset($data['status_name']) ? $data['status_name'] : null;
@@ -243,6 +255,48 @@ class ActivityModel implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets instance
+     * @return string
+     */
+    public function getInstance()
+    {
+        return $this->container['instance'];
+    }
+
+    /**
+     * Sets instance
+     * @param string $instance instance name
+     * @return $this
+     */
+    public function setInstance($instance)
+    {
+        $this->container['instance'] = $instance;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param int $id ID of activity
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets nr
