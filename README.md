@@ -63,13 +63,12 @@ BumbalCommunicationPortal\Configuration::getDefaultConfiguration()->setApiKey('A
 
 $api_instance = new BumbalCommunicationPortal\Api\ActivityApi();
 $token = "token_example"; // string | Token of the Requested Activity
-$zipcode = "zipcode_example"; // string | ZipCode of the Requested Activity
 
 try {
-    $result = $api_instance->activityRetrieve($token, $zipcode);
+    $result = $api_instance->activityInfoRetrieve($token);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ActivityApi->activityRetrieve: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ActivityApi->activityInfoRetrieve: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -81,12 +80,14 @@ All URIs are relative to *https://communication.bumbal.eu/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ActivityApi* | [**activityInfoRetrieve**](docs/Api/ActivityApi.md#activityinforetrieve) | **GET** /activity/retrieve-info | Retrieve Activity Info
 *ActivityApi* | [**activityRetrieve**](docs/Api/ActivityApi.md#activityretrieve) | **GET** /activity/retrieve | Retrieve Activity
 *ActivityApi* | [**validateToken**](docs/Api/ActivityApi.md#validatetoken) | **GET** /activity/validate-token | Validate Token
 
 
 ## Documentation For Models
 
+ - [ActivityInfoModel](docs/Model/ActivityInfoModel.md)
  - [ActivityModel](docs/Model/ActivityModel.md)
  - [AddressModel](docs/Model/AddressModel.md)
  - [ApiResponse](docs/Model/ApiResponse.md)

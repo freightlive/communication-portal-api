@@ -88,6 +88,89 @@ class ActivityApi
     }
 
     /**
+     * Operation activityInfoRetrieve
+     *
+     * Retrieve Activity Info
+     *
+     * @param string $token Token of the Requested Activity (required)
+     * @throws \BumbalCommunicationPortal\ApiException on non-2xx response
+     * @return \BumbalCommunicationPortal\Model\ActivityInfoModel
+     */
+    public function activityInfoRetrieve($token)
+    {
+        list($response) = $this->activityInfoRetrieveWithHttpInfo($token);
+        return $response;
+    }
+
+    /**
+     * Operation activityInfoRetrieveWithHttpInfo
+     *
+     * Retrieve Activity Info
+     *
+     * @param string $token Token of the Requested Activity (required)
+     * @throws \BumbalCommunicationPortal\ApiException on non-2xx response
+     * @return array of \BumbalCommunicationPortal\Model\ActivityInfoModel, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function activityInfoRetrieveWithHttpInfo($token)
+    {
+        // verify the required parameter 'token' is set
+        if ($token === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $token when calling activityInfoRetrieve');
+        }
+        // parse inputs
+        $resourcePath = "/activity/retrieve-info";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/xml']);
+
+        // query params
+        if ($token !== null) {
+            $queryParams['token'] = $this->apiClient->getSerializer()->toQueryValue($token);
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('ApiKey');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['ApiKey'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\BumbalCommunicationPortal\Model\ActivityInfoModel',
+                '/activity/retrieve-info'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\BumbalCommunicationPortal\Model\ActivityInfoModel', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\BumbalCommunicationPortal\Model\ActivityInfoModel', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation activityRetrieve
      *
      * Retrieve Activity

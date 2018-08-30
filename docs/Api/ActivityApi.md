@@ -4,9 +4,60 @@ All URIs are relative to *https://communication.bumbal.eu/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**activityInfoRetrieve**](ActivityApi.md#activityInfoRetrieve) | **GET** /activity/retrieve-info | Retrieve Activity Info
 [**activityRetrieve**](ActivityApi.md#activityRetrieve) | **GET** /activity/retrieve | Retrieve Activity
 [**validateToken**](ActivityApi.md#validateToken) | **GET** /activity/validate-token | Validate Token
 
+
+# **activityInfoRetrieve**
+> \BumbalCommunicationPortal\Model\ActivityInfoModel activityInfoRetrieve($token)
+
+Retrieve Activity Info
+
+Retrieve Activity Info based on token
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: api_key
+BumbalCommunicationPortal\Configuration::getDefaultConfiguration()->setApiKey('ApiKey', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// BumbalCommunicationPortal\Configuration::getDefaultConfiguration()->setApiKeyPrefix('ApiKey', 'Bearer');
+
+$api_instance = new BumbalCommunicationPortal\Api\ActivityApi();
+$token = "token_example"; // string | Token of the Requested Activity
+
+try {
+    $result = $api_instance->activityInfoRetrieve($token);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ActivityApi->activityInfoRetrieve: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **string**| Token of the Requested Activity |
+
+### Return type
+
+[**\BumbalCommunicationPortal\Model\ActivityInfoModel**](../Model/ActivityInfoModel.md)
+
+### Authorization
+
+[api_key](../../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **activityRetrieve**
 > \BumbalCommunicationPortal\Model\ActivityModel activityRetrieve($token, $zipcode)
