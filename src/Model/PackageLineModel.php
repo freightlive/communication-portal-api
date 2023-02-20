@@ -229,7 +229,7 @@ class PackageLineModel implements ArrayAccess
 
     /**
      * Sets nr
-     * @param string $nr
+     * @param string $nr 
      * @return $this
      */
     public function setNr($nr)
@@ -280,7 +280,7 @@ class PackageLineModel implements ArrayAccess
 
     /**
      * Sets description
-     * @param string $description
+     * @param string $description 
      * @return $this
      */
     public function setDescription($description)
@@ -301,7 +301,7 @@ class PackageLineModel implements ArrayAccess
 
     /**
      * Sets nr_of_packages
-     * @param int $nr_of_packages
+     * @param int $nr_of_packages 
      * @return $this
      */
     public function setNrOfPackages($nr_of_packages)
@@ -315,6 +315,7 @@ class PackageLineModel implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -325,6 +326,7 @@ class PackageLineModel implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -336,6 +338,7 @@ class PackageLineModel implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -350,6 +353,7 @@ class PackageLineModel implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

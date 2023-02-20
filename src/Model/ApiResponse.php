@@ -183,7 +183,7 @@ class ApiResponse implements ArrayAccess
 
     /**
      * Sets code
-     * @param int $code
+     * @param int $code 
      * @return $this
      */
     public function setCode($code)
@@ -204,7 +204,7 @@ class ApiResponse implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type
+     * @param string $type 
      * @return $this
      */
     public function setType($type)
@@ -225,7 +225,7 @@ class ApiResponse implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message
+     * @param string $message 
      * @return $this
      */
     public function setMessage($message)
@@ -239,6 +239,7 @@ class ApiResponse implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -249,6 +250,7 @@ class ApiResponse implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -260,6 +262,7 @@ class ApiResponse implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -274,6 +277,7 @@ class ApiResponse implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

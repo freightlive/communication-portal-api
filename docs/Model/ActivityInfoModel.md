@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **instance** | **string** | instance name | [optional] 
+**host** | **string** | host name | [optional] 
 **instance_api_key** | **string** | instance api key | [optional] 
 **activity_id** | **int** | ID of activity | [optional] 
 

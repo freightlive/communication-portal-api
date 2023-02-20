@@ -237,7 +237,7 @@ class AddressModel implements ArrayAccess
 
     /**
      * Sets name_1
-     * @param string $name_1
+     * @param string $name_1 
      * @return $this
      */
     public function setName1($name_1)
@@ -258,7 +258,7 @@ class AddressModel implements ArrayAccess
 
     /**
      * Sets name_2
-     * @param string $name_2
+     * @param string $name_2 
      * @return $this
      */
     public function setName2($name_2)
@@ -279,7 +279,7 @@ class AddressModel implements ArrayAccess
 
     /**
      * Sets street_1
-     * @param string $street_1
+     * @param string $street_1 
      * @return $this
      */
     public function setStreet1($street_1)
@@ -300,7 +300,7 @@ class AddressModel implements ArrayAccess
 
     /**
      * Sets street_2
-     * @param string $street_2
+     * @param string $street_2 
      * @return $this
      */
     public function setStreet2($street_2)
@@ -321,7 +321,7 @@ class AddressModel implements ArrayAccess
 
     /**
      * Sets house_nr
-     * @param string $house_nr
+     * @param string $house_nr 
      * @return $this
      */
     public function setHouseNr($house_nr)
@@ -342,7 +342,7 @@ class AddressModel implements ArrayAccess
 
     /**
      * Sets house_nr_addendum
-     * @param string $house_nr_addendum
+     * @param string $house_nr_addendum 
      * @return $this
      */
     public function setHouseNrAddendum($house_nr_addendum)
@@ -363,7 +363,7 @@ class AddressModel implements ArrayAccess
 
     /**
      * Sets zipcode
-     * @param string $zipcode
+     * @param string $zipcode 
      * @return $this
      */
     public function setZipcode($zipcode)
@@ -384,7 +384,7 @@ class AddressModel implements ArrayAccess
 
     /**
      * Sets city
-     * @param string $city
+     * @param string $city 
      * @return $this
      */
     public function setCity($city)
@@ -405,7 +405,7 @@ class AddressModel implements ArrayAccess
 
     /**
      * Sets state
-     * @param string $state
+     * @param string $state 
      * @return $this
      */
     public function setState($state)
@@ -426,7 +426,7 @@ class AddressModel implements ArrayAccess
 
     /**
      * Sets iso_country
-     * @param string $iso_country
+     * @param string $iso_country 
      * @return $this
      */
     public function setIsoCountry($iso_country)
@@ -482,6 +482,7 @@ class AddressModel implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -492,6 +493,7 @@ class AddressModel implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -503,6 +505,7 @@ class AddressModel implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -517,6 +520,7 @@ class AddressModel implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

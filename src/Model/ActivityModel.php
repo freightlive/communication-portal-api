@@ -540,7 +540,7 @@ class ActivityModel implements ArrayAccess
 
     /**
      * Sets route_latest_position
-     * @param \BumbalCommunicationPortal\Model\GeoPositionModel $route_latest_position
+     * @param \BumbalCommunicationPortal\Model\GeoPositionModel $route_latest_position 
      * @return $this
      */
     public function setRouteLatestPosition($route_latest_position)
@@ -561,7 +561,7 @@ class ActivityModel implements ArrayAccess
 
     /**
      * Sets address
-     * @param \BumbalCommunicationPortal\Model\AddressModel $address
+     * @param \BumbalCommunicationPortal\Model\AddressModel $address 
      * @return $this
      */
     public function setAddress($address)
@@ -582,7 +582,7 @@ class ActivityModel implements ArrayAccess
 
     /**
      * Sets package_lines
-     * @param \BumbalCommunicationPortal\Model\PackageLineModel[] $package_lines
+     * @param \BumbalCommunicationPortal\Model\PackageLineModel[] $package_lines 
      * @return $this
      */
     public function setPackageLines($package_lines)
@@ -603,7 +603,7 @@ class ActivityModel implements ArrayAccess
 
     /**
      * Sets brand
-     * @param \BumbalCommunicationPortal\Model\BrandModel $brand
+     * @param \BumbalCommunicationPortal\Model\BrandModel $brand 
      * @return $this
      */
     public function setBrand($brand)
@@ -617,6 +617,7 @@ class ActivityModel implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -627,6 +628,7 @@ class ActivityModel implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -638,6 +640,7 @@ class ActivityModel implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -652,6 +655,7 @@ class ActivityModel implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

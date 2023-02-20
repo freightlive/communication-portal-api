@@ -204,7 +204,7 @@ class BrandModel implements ArrayAccess
 
     /**
      * Sets brand_colours
-     * @param \BumbalCommunicationPortal\Model\BrandColourModel[] $brand_colours
+     * @param \BumbalCommunicationPortal\Model\BrandColourModel[] $brand_colours 
      * @return $this
      */
     public function setBrandColours($brand_colours)
@@ -225,7 +225,7 @@ class BrandModel implements ArrayAccess
 
     /**
      * Sets files
-     * @param \BumbalCommunicationPortal\Model\FileModel[] $files
+     * @param \BumbalCommunicationPortal\Model\FileModel[] $files 
      * @return $this
      */
     public function setFiles($files)
@@ -239,6 +239,7 @@ class BrandModel implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -249,6 +250,7 @@ class BrandModel implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -260,6 +262,7 @@ class BrandModel implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -274,6 +277,7 @@ class BrandModel implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

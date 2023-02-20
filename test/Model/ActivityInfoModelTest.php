@@ -85,6 +85,13 @@ class ActivityInfoModelTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "host"
+     */
+    public function testPropertyHost()
+    {
+    }
+
+    /**
      * Test attribute "instance_api_key"
      */
     public function testPropertyInstanceApiKey()

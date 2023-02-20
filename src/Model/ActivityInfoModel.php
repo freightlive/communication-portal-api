@@ -55,6 +55,7 @@ class ActivityInfoModel implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'instance' => 'string',
+        'host' => 'string',
         'instance_api_key' => 'string',
         'activity_id' => 'int'
     ];
@@ -65,6 +66,7 @@ class ActivityInfoModel implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'instance' => null,
+        'host' => null,
         'instance_api_key' => null,
         'activity_id' => null
     ];
@@ -85,6 +87,7 @@ class ActivityInfoModel implements ArrayAccess
      */
     protected static $attributeMap = [
         'instance' => 'instance',
+        'host' => 'host',
         'instance_api_key' => 'instance_api_key',
         'activity_id' => 'activity_id'
     ];
@@ -96,6 +99,7 @@ class ActivityInfoModel implements ArrayAccess
      */
     protected static $setters = [
         'instance' => 'setInstance',
+        'host' => 'setHost',
         'instance_api_key' => 'setInstanceApiKey',
         'activity_id' => 'setActivityId'
     ];
@@ -107,6 +111,7 @@ class ActivityInfoModel implements ArrayAccess
      */
     protected static $getters = [
         'instance' => 'getInstance',
+        'host' => 'getHost',
         'instance_api_key' => 'getInstanceApiKey',
         'activity_id' => 'getActivityId'
     ];
@@ -143,6 +148,7 @@ class ActivityInfoModel implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['instance'] = isset($data['instance']) ? $data['instance'] : null;
+        $this->container['host'] = isset($data['host']) ? $data['host'] : null;
         $this->container['instance_api_key'] = isset($data['instance_api_key']) ? $data['instance_api_key'] : null;
         $this->container['activity_id'] = isset($data['activity_id']) ? $data['activity_id'] : null;
     }
@@ -194,6 +200,27 @@ class ActivityInfoModel implements ArrayAccess
     }
 
     /**
+     * Gets host
+     * @return string
+     */
+    public function getHost()
+    {
+        return $this->container['host'];
+    }
+
+    /**
+     * Sets host
+     * @param string $host host name
+     * @return $this
+     */
+    public function setHost($host)
+    {
+        $this->container['host'] = $host;
+
+        return $this;
+    }
+
+    /**
      * Gets instance_api_key
      * @return string
      */
@@ -239,6 +266,7 @@ class ActivityInfoModel implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -249,6 +277,7 @@ class ActivityInfoModel implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -260,6 +289,7 @@ class ActivityInfoModel implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -274,6 +304,7 @@ class ActivityInfoModel implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
